@@ -1,0 +1,15 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        
+        #convert input into string
+        ostring = str(abs(x))[::-1]
+        
+        #check if 32bit
+        if int(ostring) > 2**(31):
+            ostring = '0'
+        
+        #next check if orig was negative
+        elif x < 0:
+            ostring = '-' + ostring
+        
+        return(int(ostring))
