@@ -1,0 +1,11 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        vblock=[('{','}'),('(', ')'), ('[', ']')]
+        lst1=[]
+        for i in s:
+            if len(lst1)>0 and (lst1[-1],i) in vblock:
+                lst1.pop()
+            else:
+                lst1.append(i)
+        return len(lst1)==0
+        
